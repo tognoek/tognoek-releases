@@ -1,0 +1,37 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Get date
+        id: date
+        run: echo "DATE=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+
+      - name: Prepare files
+        run: |
+          mkdir release
+          cp build/* release/
+
+          if [ -f release/tognoek.txt ]; then
+            mv release/tognoek.txt release/tognoek-${{ steps.date.outputs.DATE }}.txt
+          fi
+
+      - name: Create zip
+        run: zip -r release.zip release
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: release-${{ steps.date.outputs.DATE }}
+          name: release-${{ steps.date.outputs.DATE }}
+          files: release.zip
