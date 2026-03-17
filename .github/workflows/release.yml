@@ -22,15 +22,13 @@ jobs:
 
       - name: Prepare files
         run: |
-          mkdir release
-          cp build/* release/
-
-          if [ -f release/tognoek.txt ]; then
-            mv release/tognoek.txt release/tognoek-${{ steps.date.outputs.DATE }}.txt
-          fi
+          cp build/tognoek.txt build/tognoek-${{ steps.date.outputs.DATE }}.txt || true
+          rm -f build/tognoek.txt
 
       - name: Create zip
-        run: zip -r release.zip release
+        run: |
+          cd build
+          zip -r ../release.zip *
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
