@@ -1,1 +1,4 @@
 Xin chào bạn và cảm ơn bạn đã xài bộ công cụ của mình nha.
+- Mọi thắc mắc hãy nhắn tới zalo: 0366404785, mình sẽ trả lời sớm nhất có thể.
+- Trên trang youtube.com/@tognoek có một vài hướng dẫn bạn có thể nhé.
+- Copy file data.json vào đây để chạy luôn không cần kéo ra đâu nhé.
