@@ -38,4 +38,4 @@ https://www.youtube.com/@tognoek
 
 ---
 
-⭐ Nếu dự án hữu ích, hãy ghé thăm và theo dõi kênh YouTube để ủng hộ nhé!
+⭐ Nếu dự án hữu ích, hãy ghé thăm và theo dõi kênh YouTube để ủng hộ tớ nhé!
