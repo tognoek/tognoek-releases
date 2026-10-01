@@ -1,0 +1,4 @@
+*.json
+*.log
+/build/web
+/build/server.*
